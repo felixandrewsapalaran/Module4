@@ -5,7 +5,7 @@
 
  DONE: Add an .underline class to "Formatted Text" when Underline button is clicked
 
- TODO: Toggle the align style for "Formmated Text" when the appropriate button is clicked
+ DONE: Toggle the align style for "Formmated Text" when the appropriate button is clicked
 
  */
 
@@ -89,4 +89,28 @@ function makeUnderline(elem){
 
 function alignText(elem, alignType) {
     // CODE GOES HERE
+
+    // Get the element
+    //elem.classList.toggle('active');
+
+    // it will log which type button you've pressed
+    //console.log(alignType);
+
+    // adding style to to element depending on the text align type
+    document.getElementById('text-output').style.textAlign = alignType;
+
+    // select all the actiuve buttons element by class
+    let buttonsList = document.getElementsByClassName('align');
+
+    // loop through all the buttons
+    for(let i = 0; i < buttonsList.length; i++) {
+        // remove all the class 'active' to all of them
+        buttonsList[i].classList.remove('active');
+
+    }
+
+    // Once we remove all the active from all the buttons
+    // we want to add active to the one to you click
+    elem.classList.add('active'); // the one we click is the only one to be active everything else is inactive
+
 }
