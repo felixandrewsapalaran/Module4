@@ -1,9 +1,9 @@
 /*
  DONE: Update the text in the "Formatted Text" section as a user types in the textarea
 
- TODO TOGETHER: Add a .bold, .italic classes to "Formatted text" when the approriate button is clicked
+ DONE TOGETHER: Add a .bold, .italic classes to "Formatted text" when the approriate button is clicked
 
- TODO: Add an .underline class to "Formatted Text" when Underline button is clicked
+ DONE: Add an .underline class to "Formatted Text" when Underline button is clicked
 
  TODO: Toggle the align style for "Formmated Text" when the appropriate button is clicked
 
@@ -33,6 +33,13 @@ function updateText(){
 */
 function makeBold(elem){
     //CODE GOES HERE
+    //console.log(elem);
+
+    // if you inspect the click button and click the bold it will turn on the class 'active'
+    elem.classList.toggle('active'); // Makes the button active when click
+
+    // if you click the bold button this will turn the output text to bold
+    document.getElementById('text-output').classList.toggle('bold');
 }
 
 
@@ -41,6 +48,9 @@ function makeBold(elem){
 */
 function makeItalic(elem){
 
+    elem.classList.toggle('active');
+    
+    document.getElementById('text-output').classList.toggle('italic');
 }
 
 /*
@@ -51,6 +61,22 @@ function makeItalic(elem){
 */
 function makeUnderline(elem){
     //CODE GOES HERE
+
+    // making the button class active when click
+    elem.classList.toggle('active');
+    
+    // get the specific element 
+    let formattedText = document.getElementById('text-output');
+
+    // check the element if it contains a certain class
+    // if containers a underline class
+    if (formattedText.classList.contains('underline')){ 
+        // then remove it
+        formattedText.classList.remove('underline');
+    }else{
+        // if it doesn't contain the underline we want to addded it
+        formattedText.classList.add('underline');
+    }
 }
 
 
