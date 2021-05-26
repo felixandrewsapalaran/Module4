@@ -27,7 +27,8 @@
             <div class="form-group">
               <label for="text-input">Your Document Text</label>
               <!-- Every timeyou click a button it can fire something or call a funtion -->
-              <textarea class="form-control" id="text-input" onkeydown="updateText()" rows="3"></textarea>
+              <!-- <textarea class="form-control" id="text-input" onkeyup="updateText()" rows="3"></textarea> -->
+              <textarea class="form-control" id="text-input" oninput="updateText()" rows="3"></textarea>
           </div>
           </div>
           <div class="col">
