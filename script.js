@@ -13,7 +13,7 @@
 Update the output text as a user types in the textarea
 HINT: Use the onkeydown function inside HTML
 */
-function updateText(){
+updateText = () => {
     // CODE GOES HERE
     //console.log("Working");
 
@@ -31,7 +31,7 @@ function updateText(){
 * HINT: Look into using this keyword
 * HINT: Toggle .active class for the button
 */
-function makeBold(elem){
+makeBold = (elem) => {
     //CODE GOES HERE
     //console.log(elem);
 
@@ -46,7 +46,7 @@ function makeBold(elem){
 /*
  Toggle the italic class for the ouput text
 */
-function makeItalic(elem){
+makeItalic = (elem) => {
 
     elem.classList.toggle('active');
     
@@ -59,7 +59,7 @@ function makeItalic(elem){
  * HINT: Use the classList property
  * HINT: Use contains, remove, and add functions
 */
-function makeUnderline(elem){
+makeUnderline = (elem) => {
     //CODE GOES HERE
 
     // making the button class active when click
@@ -87,7 +87,7 @@ function makeUnderline(elem){
  * HINT: Make sure to untoggle the active state for all other align buttons
 */
 
-function alignText(elem, alignType) {
+alignText = (elem, alignType) => {
     // CODE GOES HERE
 
     // Get the element
@@ -102,11 +102,25 @@ function alignText(elem, alignType) {
     // select all the actiuve buttons element by class
     let buttonsList = document.getElementsByClassName('align');
 
-    // loop through all the buttons
-    for(let i = 0; i < buttonsList.length; i++) {
-        // remove all the class 'active' to all of them
-        buttonsList[i].classList.remove('active');
+    // // loop through all the buttons
+    // for(let i = 0; i < buttonsList.length; i++) {
+    //     // remove all the class 'active' to all of them
+    //     buttonsList[i].classList.remove('active');
 
+    // }
+
+    console.log(buttonsList);
+
+    // This causes an error because we looping through an html element which is not the same as an array type.
+    // buttonsList.map((button) => {
+    //     button.classList.remove('active');
+    // })
+
+
+    // so we use this forEach loop instead
+    for (let button of buttonsList) {
+        button.classList.remove('active');
+        console.log(button); // just to shows which button was clicked
     }
 
     // Once we remove all the active from all the buttons
